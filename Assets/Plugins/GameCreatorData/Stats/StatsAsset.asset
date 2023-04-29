@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b3929c93f8d6424c87244a3a5d99e94, type: 3}
+  m_Name: StatsAsset
+  m_EditorClassIdentifier: 
+  stats:
+  - {fileID: 7953010579858265230}
+  - {fileID: 890853626552569761}
+--- !u!114 &890853626552569761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c8dd195211246108375b2b5fb580d5, type: 3}
+  m_Name: d1fjutzs
+  m_EditorClassIdentifier: 
+  uniqueID: cc65d471e6ca416d830c7c7c68a1bdb6
+  stat:
+    uniqueName: Strength
+    shortName: STR
+    title:
+      content: 
+      postProcess: 0
+      translationID: 0
+    description:
+      content: 
+      postProcess: 0
+      translationID: 0
+    icon: {fileID: 0}
+    color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    baseValue: 1
+    formula: {fileID: 0}
+  isHidden: 0
+--- !u!114 &7953010579858265230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c8dd195211246108375b2b5fb580d5, type: 3}
+  m_Name: me0aifem
+  m_EditorClassIdentifier: 
+  uniqueID: ed8eb674edb149f8ba127b800fc25a7a
+  stat:
+    uniqueName: Vitality
+    shortName: VIT
+    title:
+      content: Health
+      postProcess: 0
+      translationID: 0
+    description:
+      content: 
+      postProcess: 0
+      translationID: 0
+    icon: {fileID: 0}
+    color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    baseValue: 100
+    formula: {fileID: 0}
+  isHidden: 0

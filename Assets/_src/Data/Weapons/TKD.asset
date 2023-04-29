@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 174e3c307f7474e6fa3b8acd263a757e, type: 3}
+  m_Name: TKD
+  m_EditorClassIdentifier: 
+  weaponName:
+    content: TKD
+    postProcess: 0
+    translationID: 0
+  weaponDescription:
+    content: Weapon Description
+    postProcess: 0
+    translationID: 0
+  defaultShield: {fileID: 11400000, guid: bd72d564592cd6545b049044fe28bca3, type: 2}
+  characterState: {fileID: 0}
+  characterMask: {fileID: 0}
+  prefab: {fileID: 9133160898092520377, guid: 5ecdab6e715a7f5498b2935f4bd453e9, type: 3}
+  attachment: -1
+  positionOffset: {x: 0, y: 1, z: 1}
+  rotationOffset: {x: 0, y: 0, z: 0}
+  audioSheathe: {fileID: 0}
+  audioDraw: {fileID: 0}
+  audioImpactNormal: {fileID: 8300000, guid: 21c1d578cb15c5d41a9ad7f4d4b335d2, type: 3}
+  audioImpactKnockback: {fileID: 8300000, guid: f03117ad67fa8e549aa426a166e78c51,
+    type: 3}
+  groundHitReactionsFront:
+  - {fileID: 11400000, guid: 10e968b94c1a01547a8d1cdbc459a6db, type: 2}
+  groundHitReactionsBehind:
+  - {fileID: 11400000, guid: 425e93910b15ef74cbefa83d5f5b6284, type: 2}
+  groundHitReactionsUpperDown:
+  - {fileID: 11400000, guid: 86352655e8391d749b3d4faa13ffd411, type: 2}
+  groundHitReactionsDownerUp:
+  - {fileID: 11400000, guid: 00a8edbab35e0384d884513f7435cdb1, type: 2}
+  groundHitReactionsLeft:
+  - {fileID: 11400000, guid: 282c00b9763ebc64cb9e7b42dc9b9a85, type: 2}
+  groundHitReactionsRight:
+  - {fileID: 11400000, guid: e7043426fa13c834faad04a75dce8a53, type: 2}
+  airborneHitReactionsFront:
+  - {fileID: 11400000, guid: 10e968b94c1a01547a8d1cdbc459a6db, type: 2}
+  airborneHitReactionsBehind:
+  - {fileID: 11400000, guid: 10e968b94c1a01547a8d1cdbc459a6db, type: 2}
+  knockbackReaction:
+  - {fileID: 11400000, guid: 5d48f287eadc09942a221794fdbe5d4a, type: 2}
+  combos:
+  - combo: 00000000
+    condition: 0
+    meleeClip: {fileID: 11400000, guid: 317cddac42ceac047acf2f7b0f82e494, type: 2}
+    isEnabled: 1
+  - combo: 0000000000000000
+    condition: 0
+    meleeClip: {fileID: 11400000, guid: 0c2eeaaf5389f5b469f166fd3ff67886, type: 2}
+    isEnabled: 1
+  - combo: 000000000000000000000000
+    condition: 0
+    meleeClip: {fileID: 11400000, guid: defedab2d8e4eed4981968532feb002c, type: 2}
+    isEnabled: 1
+  - combo: 00000000000000000000000000000000
+    condition: 0
+    meleeClip: {fileID: 11400000, guid: d35b7c89b69f3f74fa210055e35d4ded, type: 2}
+    isEnabled: 1
+  prefabImpactNormal: {fileID: 2427786012956944610, guid: da0de216ad60c5d46a6b049d61961615,
+    type: 3}
+  prefabImpactKnockback: {fileID: 2427786012956944610, guid: da0de216ad60c5d46a6b049d61961615,
+    type: 3}

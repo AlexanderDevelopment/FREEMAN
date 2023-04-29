@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ac1e52345c5a4a8489aff2c0a41bacb, type: 3}
+  m_Name: AttributesAsset
+  m_EditorClassIdentifier: 
+  attributes:
+  - {fileID: 4287789997694763017}
+--- !u!114 &4287789997694763017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543ed1946d26146d59a35072bef19b50, type: 3}
+  m_Name: 777l0e4m
+  m_EditorClassIdentifier: 
+  uniqueID: 7b73a8e3b2704509a53e0bc9c523387b
+  attribute:
+    uniqueName: health
+    shortName: 
+    title:
+      content: 
+      postProcess: 0
+      translationID: 0
+    description:
+      content: 
+      postProcess: 0
+      translationID: 0
+    icon: {fileID: 0}
+    color: {r: 1, g: 0, b: 0, a: 1}
+    minValue: 0
+    stat: {fileID: 7953010579858265230, guid: 7ed1fdb1e1cadc54fb55ac2be885023d, type: 2}
+    percent: 1
