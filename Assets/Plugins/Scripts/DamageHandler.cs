@@ -1,6 +1,7 @@
 ﻿using System;
 using BehaviorDesigner.Runtime;
 using GameCreator.Characters;
+using GameCreator.Melee;
 using GameCreator.Stats;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -8,15 +9,12 @@ using UnityEngine.Events;
 
 namespace _src.Plugins.Scripts
 {
-    public class DamageHandler: MonoBehaviour
+    public class DamageHandler : MonoBehaviour
     {
-        [SerializeField, AttributeSelector]
-        private AttrAsset healthAttribute;
-        
-        [SerializeField, StatSelector]
-        private StatAsset strength;
-        [Title("Death")]
-        [SerializeField] private AnimationClip clip;
+        [SerializeField, AttributeSelector] private AttrAsset healthAttribute;
+
+        [SerializeField, StatSelector] private StatAsset strength;
+        [Title("Death")] [SerializeField] private AnimationClip clip;
 
         [SerializeField] private AvatarMask avatarMask;
 
@@ -31,7 +29,7 @@ namespace _src.Plugins.Scripts
         private Character character;
         private float waitUntil = -1f;
         private bool isDead;
-        
+
 
         public float UnitDamage
             => stats.GetStat(strength.stat.uniqueName);
@@ -39,8 +37,7 @@ namespace _src.Plugins.Scripts
         public bool IsDead
             => stats.GetAttrValue(healthAttribute.attribute.uniqueName) <= 0;
 
-        [SerializeField]
-        private Stats stats;
+        [SerializeField] private Stats stats;
 
         public UnityEvent<float> OnRecieveDamage = new();
 
@@ -74,8 +71,10 @@ namespace _src.Plugins.Scripts
                 TryGetComponent(out character);
                 TryGetComponent(out characterAnimator);
                 TryGetComponent(out characterController);
+                TryGetComponent(out CharacterMelee melee);
                 TryGetComponent(out BehaviorTree behaviorTree);
-                if (characterAnimator == null || clip == null || characterController == null || character == null)
+                if (characterAnimator == null || clip == null || characterController == null || character == null ||
+                    melee == null)
                 {
                     Debug.LogError("[One of required components is null");
                     return;
@@ -87,7 +86,9 @@ namespace _src.Plugins.Scripts
                     behaviorTree.enabled = false;
                 }
 
+
                 characterController.enabled = false;
+                melee.enabled = false;
                 character.characterLocomotion.Stop();
                 characterAnimator.SetState(
                     this.clip,

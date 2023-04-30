@@ -1280,7 +1280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8798009103697858065}
-  defaultState: {fileID: 0}
+  defaultState: {fileID: 11400000, guid: 9a484d8a3ec5ac74e8bc26c33b84b341, type: 2}
   useFootIK: 0
   footLayerMask:
     serializedVersion: 2
