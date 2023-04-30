@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8256880301185975050}
   - component: {fileID: 1957629097036495501}
   m_Layer: 0
-  m_Name: Fists
+  m_Name: EnemyFists
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   captureHits: 1
   layerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 8
   segmentResolution: 0.05
   pointA: {x: 0, y: 0, z: 0}
   pointB: {x: 0, y: 0, z: 1}

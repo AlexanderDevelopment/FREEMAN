@@ -41,7 +41,7 @@ MonoBehaviour:
       translationID: 0
     icon: {fileID: 0}
     color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    baseValue: 1
+    baseValue: 10
     formula: {fileID: 0}
   isHidden: 0
 --- !u!114 &7953010579858265230

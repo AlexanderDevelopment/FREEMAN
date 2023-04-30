@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af074dba030af45af95ab60f307eb78c, type: 3}
   m_Name: KnockBack
   m_EditorClassIdentifier: 
-  animationClip: {fileID: 7400000, guid: 267bef2cda2e3da4daa4e537c0cfd41c, type: 3}
+  animationClip: {fileID: 7400000, guid: 70a217108d000e247b72c8c7f8d91bf6, type: 3}
   avatarMask: {fileID: 0}
   transitionIn: 0.25
   transitionOut: 0.25

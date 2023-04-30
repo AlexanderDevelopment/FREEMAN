@@ -1,4 +1,5 @@
-﻿using BehaviorDesigner.Runtime;
+﻿using _src.Plugins.Scripts;
+using BehaviorDesigner.Runtime;
 
 namespace GameCreator.Melee
 {
@@ -52,6 +53,7 @@ namespace GameCreator.Melee
 
         private ComboSystem comboSystem;
         private InputBuffer inputBuffer;
+        private DamageHandler damageHandler;
 
         public float Poise { get; protected set; }
         private float poiseDelayCooldown;
@@ -114,6 +116,7 @@ namespace GameCreator.Melee
             this.Character = GetComponent<Character>();
             this.CharacterAnimator = GetComponent<CharacterAnimator>();
             this.inputBuffer = new InputBuffer(INPUT_BUFFER_TIME);
+            this.damageHandler = GetComponent<DamageHandler>();
         }
 
         // UPDATE: --------------------------------------------------------------------------------
@@ -586,14 +589,14 @@ namespace GameCreator.Melee
                     if (this.EventBreakDefense != null) this.EventBreakDefense.Invoke();
                 }
             }
-
+            DoDamage(attacker, this);
             this.AddPoise(-attack.poiseDamage);
             MeleeClip.Direction direction = attacker.comboSystem.GetCurrentClip().direction;
             bool isFrontalAttack = attackAngle >= 90f;
             bool isKnockback = this.Poise <= float.Epsilon;
 
             MeleeClip hitReaction = this.currentWeapon.GetHitReaction(
-                this.Character.IsGrounded(),isFrontalAttack,
+                this.Character.IsGrounded(), isFrontalAttack,
                 direction,
                 isKnockback
             );
@@ -609,7 +612,7 @@ namespace GameCreator.Melee
             );
 
             attack.ExecuteHitPause();
-            if (!this.IsUninterruptable)
+            if (!this.IsUninterruptable && !damageHandler.IsDead)
             {
                 hitReaction.Play(this);
             }
@@ -669,6 +672,17 @@ namespace GameCreator.Melee
             }
 
             return time;
+        }
+
+        private void DoDamage(CharacterMelee invoker, CharacterMelee receiver)
+        {
+            invoker.TryGetComponent(out DamageHandler invokerDamageHandler);
+            receiver.TryGetComponent(out DamageHandler receiverDamageHandler);
+
+            if (invokerDamageHandler && receiverDamageHandler)
+                receiverDamageHandler.OnRecieveDamage.Invoke(invokerDamageHandler.UnitDamage);
+            else
+                Debug.LogError("one side DamageHandler is null");
         }
     }
 }

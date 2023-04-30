@@ -42,7 +42,7 @@ namespace _src.Scripts.Ai.Tasks
 
             var attrPercent = _stats.GetAttrValuePercent(HEALTH_ATTR_NAME);
 
-            if (attrPercent >= _normalizedPercent)
+            if (attrPercent > _normalizedPercent)
                 return TaskStatus.Success;
 
             return TaskStatus.Failure;

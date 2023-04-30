@@ -23,7 +23,7 @@ MonoBehaviour:
   defaultShield: {fileID: 0}
   characterState: {fileID: 0}
   characterMask: {fileID: 0}
-  prefab: {fileID: 9133160898092520377, guid: 5ecdab6e715a7f5498b2935f4bd453e9, type: 3}
+  prefab: {fileID: 9133160898092520377, guid: b251348cab95c12439d7f7a02c12f0f7, type: 3}
   attachment: -1
   positionOffset: {x: 0, y: 1, z: 1}
   rotationOffset: {x: 0, y: 0, z: 0}
