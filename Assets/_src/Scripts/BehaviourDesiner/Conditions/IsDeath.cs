@@ -1,5 +1,5 @@
 ﻿using BehaviorDesigner.Runtime.Tasks;
-using GameCreator.Stats;
+using Plugins.Scripts;
 using UnityEngine;
 
 namespace _src.Scripts.BehaviourDesiner.Conditions
@@ -8,20 +8,17 @@ namespace _src.Scripts.BehaviourDesiner.Conditions
     [TaskCategory("Stats")]
     public class IsDeath : Conditional
     {
-        private const string HEALTH_ATTR_NAME = "health";
-
-        private Stats stats;
-
+        private DamageHandler damageHandler;
         public override void OnStart()
         {
-            TryGetComponent(out stats);
+            TryGetComponent(out damageHandler);
         }
 
         public override TaskStatus OnUpdate()
         {
-            if (stats)
+            if (damageHandler)
             {
-                return stats.GetAttrValue(HEALTH_ATTR_NAME) <= 0
+                return damageHandler.IsDead
                     ? TaskStatus.Success
                     : TaskStatus.Failure;
             }

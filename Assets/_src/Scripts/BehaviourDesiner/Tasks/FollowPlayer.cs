@@ -35,9 +35,9 @@ namespace _src.Scripts.Ai.Tasks
             if (player == null) return TaskStatus.Failure;
 
 
-            _character.characterLocomotion.FollowTarget(
-                player,
-                this._attackDistance,
+            _character.characterLocomotion.SetTarget(
+                player.transform.position,
+               null,
                 this._attackDistance
             );
             return Vector3.Distance(player.position, _character.transform.position)

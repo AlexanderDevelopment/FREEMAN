@@ -6,7 +6,7 @@ using GameCreator.Stats;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace _src.Plugins.Scripts
+namespace Plugins.Scripts
 {
     public class AttributeValueUI : MonoBehaviour
     {

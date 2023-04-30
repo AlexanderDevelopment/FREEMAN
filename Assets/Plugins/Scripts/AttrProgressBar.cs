@@ -3,7 +3,7 @@ using GameCreator.Stats;
 using MoreMountains.Tools;
 using UnityEngine;
 
-namespace _src.Plugins.Scripts
+namespace Plugins.Scripts
 {
     public class AttrProgressBar : MonoBehaviour
     {

@@ -3,7 +3,7 @@ using GameCreator.Camera;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace Plugins.Scripts.Utils
+namespace Plugins.Scripts
 {
     public class CopyCameraRotation : MonoBehaviour
     {
