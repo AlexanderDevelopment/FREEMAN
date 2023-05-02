@@ -49,20 +49,22 @@ namespace Plugins.Scripts
 		private List<Finisher> finishers = new();
 
 
-		public async UniTask StartDoubleAnimation(Character actorAttacker, Character actorReceiver)
+		public async UniTask StartDoubleAnimation(Character attacker, Character receiver)
 		{
 			if (!isEnemy)
 				return;
 
-			attackerAnimatorController = actorAttacker.GetComponent<CharacterAnimator>();
-			receiverAnimatorController = actorReceiver.GetComponent<CharacterAnimator>();
-			CharacterLock(actorAttacker);
-			CharacterLock(actorReceiver);
-			var attackerVirtualCamera = actorAttacker.GetComponent<DualAnimationsMachine>().virtualCamera;
+			attackerAnimatorController = attacker.GetComponent<CharacterAnimator>();
+			receiverAnimatorController = receiver.GetComponent<CharacterAnimator>();
+			//Important rotate character before lock its, becouse we disable they's character controllers
+			RotateActorsEachOthers(attacker, receiver);
+			CharacterLock(attacker);
+			CharacterLock(receiver);
+			var attackerVirtualCamera = attacker.GetComponent<DualAnimationsMachine>().virtualCamera;
 			attackerVirtualCamera.m_Priority = 2;
 			await PlayFinisher();
 			attackerVirtualCamera.m_Priority = 0;
-			CharacterUnlock(actorAttacker);
+			CharacterUnlock(attacker);
 		}
 
 
@@ -117,6 +119,15 @@ namespace Plugins.Scripts
 				isPlayingFinisher = false;
 				StopListenFeedbacksOnAnimationEvent(attackerCharacter);
 			}
+		}
+
+
+		private void RotateActorsEachOthers(Character attacker, Character receiver)
+		{
+			var attackerDirection = receiver.gameObject.transform.position - attacker.gameObject.transform.position;
+			var receiverDirection = attacker.gameObject.transform.position - receiver.gameObject.transform.position;
+			attacker.characterLocomotion.SetRotation(attackerDirection);
+			receiver.characterLocomotion.SetRotation(receiverDirection);
 		}
 
 
