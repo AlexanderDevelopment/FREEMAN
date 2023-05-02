@@ -172,28 +172,6 @@ MonoBehaviour:
       - Assets/Plugins/GameCreator/Behavior/
       dataPaths: []
   - module:
-      moduleID: com.ninjutsugames.module.photon
-      version:
-        major: 0
-        minor: 3
-        patch: 3
-      displayName: Photon Network
-      description: The easiest way to add multiplayer functionality to your game.
-      category: Module
-      dependencies: []
-      tags:
-      - module
-      - photon
-      - multiplayer
-      - online
-      authorName: Hjupter Cerrud
-      authorMail: hjupter@ninjutsugames.com
-      authorSite: https://njg.gitbook.io/gc-modules
-      includesData: 0
-      codePaths:
-      - Assets/Ninjutsu Games/GameCreator Modules/Photon/
-      dataPaths: []
-  - module:
       moduleID: com.ninjutsugames.examples.photon
       version:
         major: 0
@@ -221,3 +199,25 @@ MonoBehaviour:
       - Assets/Ninjutsu Games/GameCreator Modules/PhotonExamples/
       dataPaths:
       - Assets/Plugins/GameCreatorData/Photon/Resources/GameCreator/Databases
+  - module:
+      moduleID: com.ninjutsugames.module.photon
+      version:
+        major: 0
+        minor: 3
+        patch: 3
+      displayName: Photon Network
+      description: The easiest way to add multiplayer functionality to your game.
+      category: Module
+      dependencies: []
+      tags:
+      - module
+      - photon
+      - multiplayer
+      - online
+      authorName: Hjupter Cerrud
+      authorMail: hjupter@ninjutsugames.com
+      authorSite: https://njg.gitbook.io/gc-modules
+      includesData: 0
+      codePaths:
+      - Assets/Ninjutsu Games/GameCreator Modules/Photon/
+      dataPaths: []
