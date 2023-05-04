@@ -27,10 +27,10 @@ namespace Plugins.Scripts
 		public float BattleCircleRadius
 			=> battleCircleRadius;
 
-
+		[ShowInInspector,ReadOnly]
 		private List<Character> attackers = new();
 
-
+		[ShowInInspector,ReadOnly]
 		public bool PlayerIsBusy
 			=> attackers.Count >= maximumAttackers;
 
