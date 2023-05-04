@@ -6,6 +6,7 @@ namespace Plugins.Scripts.Battle.BattleAI
 {
 	public class ReturnToCircleState : State
 	{
+		private Vector3 circlePoint;
 		public ReturnToCircleState(IEnemyAiBehaviour enemy, IEnemyAiStates enemyAiStates, StateMachine stateMachine) : base(enemy, enemyAiStates, stateMachine)
 		{
 		}
@@ -13,7 +14,8 @@ namespace Plugins.Scripts.Battle.BattleAI
 
 		public override void Enter()
 		{
-			enemy.CurrentEnemy.characterLocomotion.SetTarget(enemy.PlayerBattleCircle.GetRandomCirclePoint(), null, enemy.EnemyAiData.AttackDistance);
+			circlePoint = enemy.PlayerBattleCircle.GetRandomCirclePoint();
+			enemy.CurrentEnemy.characterLocomotion.SetTarget(circlePoint, null, 0);
 		}
 
 
@@ -23,8 +25,7 @@ namespace Plugins.Scripts.Battle.BattleAI
 			{
 				stateMachine.ChangeState(enemyAiStates.DeathState);
 			}
-			
-			if (Vector3.Distance(enemy.transform.position, enemy.Player.transform.position) >= enemy.PlayerBattleCircle.BattleCircleRadius)
+			if (Vector3.Distance(enemy.transform.position, circlePoint) <= 1f)
 			{
 				stateMachine.ChangeState(enemyAiStates.CloseUpWithPlayerState);
 			}

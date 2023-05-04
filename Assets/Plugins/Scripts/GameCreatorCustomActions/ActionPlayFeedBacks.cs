@@ -9,6 +9,16 @@ namespace Plugins.Scripts.GameCreatorCustomActions
     [AddComponentMenu("")]
     public class ActionPlayFeedBacks : IAction
     {
+        public enum Mode
+        {
+            Play,
+            Stop,
+            
+        }
+
+
+        [SerializeField]
+        private Mode mode;
         [SerializeField] 
         private MMF_Player m_MMF_Player;
 
@@ -16,7 +26,15 @@ namespace Plugins.Scripts.GameCreatorCustomActions
 
         public override bool InstantExecute(GameObject target, IAction[] actions, int index)
         {
-            m_MMF_Player.PlayFeedbacks();
+            if (mode == Mode.Play)
+            {
+                 m_MMF_Player.PlayFeedbacks();
+            }
+            else
+            {
+                m_MMF_Player.StopFeedbacks();
+            }
+           
             return true;
         }
 

@@ -9,11 +9,13 @@ namespace Plugins.Scripts.Battle.BattleAI
 
 		public override void Enter()
 		{
+			
 		}
 
 
 		public override void LogicUpdate()
 		{
+			
 			if (enemy.DamageHandler.IsDead)
 			{
 				stateMachine.ChangeState(enemyAiStates.DeathState);
@@ -23,10 +25,8 @@ namespace Plugins.Scripts.Battle.BattleAI
 			{
 				enemy.PlayerBattleCircle.AttackerAdd(enemy.CurrentEnemy);
 				enemy.CurrentEnemy.characterLocomotion.SetTarget(enemy.Player.transform.position, null, 0);
-
 				
 			}
-
 			if (Vector3.Distance(enemy.transform.position, enemy.Player.transform.position) <= enemy.EnemyAiData.AttackDistance)
 			{
 				stateMachine.ChangeState(enemyAiStates.AttackPlayerState);

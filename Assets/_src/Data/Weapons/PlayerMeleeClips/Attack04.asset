@@ -837,7 +837,7 @@ MonoBehaviour:
   pushForce: 50
   poiseDamage: 6
   defenseDamage: 5
-  interruptible: 0
+  interruptible: 1
   vulnerability: 0
   posture: 0
   direction: 5

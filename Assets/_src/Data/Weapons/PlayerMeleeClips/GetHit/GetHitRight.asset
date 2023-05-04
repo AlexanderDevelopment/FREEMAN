@@ -404,8 +404,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  gravityInfluence: 1
-  movementMultiplier: 1
+  gravityInfluence: 0
+  movementMultiplier: 0
   soundEffect: {fileID: 0}
   hitPause: 1
   hitPauseAmount: 0.05
@@ -417,7 +417,7 @@ MonoBehaviour:
   defenseDamage: 1
   interruptible: 0
   vulnerability: 0
-  posture: 0
+  posture: 1
   direction: 0
   attackPhase:
     serializedVersion: 2

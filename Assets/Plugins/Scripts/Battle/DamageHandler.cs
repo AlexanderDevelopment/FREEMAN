@@ -3,6 +3,7 @@ using Cysharp.Threading.Tasks;
 using GameCreator.Characters;
 using GameCreator.Melee;
 using GameCreator.Stats;
+using MoreMountains.Feedbacks;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -30,6 +31,15 @@ namespace Plugins.Scripts
 
 		[SerializeField]
 		private float finisherChance = 100;
+
+
+		[Title("Feedbacks")]
+		[SerializeField, Required]
+		private MMF_Player lowHealthFeedbacks;
+
+
+		[SerializeField]
+		private float lowHealthFeedbacksActivationHealthValue;
 
 
 		[Title("Death")]
@@ -110,8 +120,14 @@ namespace Plugins.Scripts
 		{
 			var currentHealth = stats.GetAttrValue(healthAttribute.attribute.uniqueName);
 
+			if (currentHealth <= lowHealthFeedbacksActivationHealthValue)
+				lowHealthFeedbacks.PlayFeedbacks();
+
 			if (currentHealth <= 0)
+			{
+				lowHealthFeedbacks.StopFeedbacks();
 				Death();
+			}
 		}
 
 
