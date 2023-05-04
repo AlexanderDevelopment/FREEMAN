@@ -362,7 +362,6 @@ MonoBehaviour:
   - rid: 4892837330628640775
   - rid: 4892837330628640776
   - rid: 4892837330628640777
-  - rid: 4892837330628640778
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   ForceStopFeedbacksOnDisable: 1
@@ -816,113 +815,6 @@ MonoBehaviour:
           m_RotationOrder: 4
         Amplitude: 1
         RelativeIntensity: 0
-    - rid: 4892837330628640778
-      type: {class: MMF_CameraFieldOfView, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
-      data:
-        Active: 1
-        UniqueID: 720376079
-        Label: Field of View
-        ChannelMode: 0
-        Channel: 0
-        MMChannelDefinition: {fileID: 0}
-        Chance: 100
-        DisplayColor: {r: 0, g: 0, b: 0, a: 1}
-        Timing:
-          TimescaleMode: 0
-          ExcludeFromHoldingPauses: 0
-          ContributeToTotalDuration: 1
-          InitialDelay: 0
-          CooldownDuration: 0
-          InterruptsOnStop: 1
-          NumberOfRepeats: 0
-          RepeatForever: 0
-          DelayBetweenRepeats: 1
-          MMFeedbacksDirectionCondition: 0
-          PlayDirection: 0
-          ConstantIntensity: 0
-          UseIntensityInterval: 0
-          IntensityIntervalMin: 0
-          IntensityIntervalMax: 0
-          Sequence: {fileID: 0}
-          TrackID: 0
-          Quantized: 0
-          TargetBPM: 120
-        AutomatedTargetAcquisition:
-          Mode: 0
-          ChildIndex: 0
-        RandomizeOutput: 0
-        RandomMultiplier: {x: 0.8, y: 1}
-        RandomizeDuration: 0
-        RandomDurationMultiplier: {x: 0.5, y: 2}
-        UseRange: 0
-        RangeDistance: 5
-        UseRangeFalloff: 0
-        RangeFalloff:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 1
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        RemapRangeFalloff: {x: 0, y: 1}
-        Owner: {fileID: 3755521313910832419}
-        DebugActive: 0
-        Duration: 0.2
-        ResetShakerValuesAfterShake: 1
-        ResetTargetValuesAfterShake: 1
-        RelativeFieldOfView: 0
-        ShakeFieldOfView:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 0.5
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 1
-            value: 0
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        RemapFieldOfViewZero: 60
-        RemapFieldOfViewOne: 50
 --- !u!1 &1147421562864829633
 GameObject:
   m_ObjectHideFlags: 0
@@ -8271,7 +8163,7 @@ PrefabInstance:
     - target: {fileID: 866000602754563567, guid: 3a0646c8cdfd8414eb3cdc1d82e5293d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.3561373
+      value: 2.3726473
       objectReference: {fileID: 0}
     - target: {fileID: 866000602754563567, guid: 3a0646c8cdfd8414eb3cdc1d82e5293d,
         type: 3}
@@ -8281,27 +8173,27 @@ PrefabInstance:
     - target: {fileID: 866000602754563567, guid: 3a0646c8cdfd8414eb3cdc1d82e5293d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.1474724
+      value: 4.13805
       objectReference: {fileID: 0}
     - target: {fileID: 866000602754563567, guid: 3a0646c8cdfd8414eb3cdc1d82e5293d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.232484
+      value: -0.2342368
       objectReference: {fileID: 0}
     - target: {fileID: 866000602754563567, guid: 3a0646c8cdfd8414eb3cdc1d82e5293d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.105857074
+      value: -0.10665516
       objectReference: {fileID: 0}
     - target: {fileID: 866000602754563567, guid: 3a0646c8cdfd8414eb3cdc1d82e5293d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.87990224
+      value: 0.87943727
       objectReference: {fileID: 0}
     - target: {fileID: 866000602754563567, guid: 3a0646c8cdfd8414eb3cdc1d82e5293d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.4006464
+      value: -0.4004346
       objectReference: {fileID: 0}
     - target: {fileID: 866000602754563567, guid: 3a0646c8cdfd8414eb3cdc1d82e5293d,
         type: 3}
