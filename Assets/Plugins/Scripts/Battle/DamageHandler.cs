@@ -1,10 +1,8 @@
-﻿using System;
-using BehaviorDesigner.Runtime;
+﻿using BehaviorDesigner.Runtime;
 using Cysharp.Threading.Tasks;
 using GameCreator.Characters;
 using GameCreator.Melee;
 using GameCreator.Stats;
-using Plugins.Scripts;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -28,6 +26,10 @@ namespace Plugins.Scripts
 
 		[SerializeField]
 		private float finisherPercentStarter = 20;
+
+
+		[SerializeField]
+		private float finisherChance = 100;
 
 
 		[Title("Death")]
@@ -115,12 +117,15 @@ namespace Plugins.Scripts
 
 		private async UniTask CheckHealthForStartFinisher(Character attacker, Character receiver)
 		{
-			var currentHealth = stats.GetAttrValuePercent(healthAttribute.attribute.uniqueName);
-
-			if (currentHealth <= finisherPercentStarter * 0.01)
+			if (Random.Range(0, 100) <= finisherChance)
 			{
-				ApplyDamage(CurrentHealth);
-				await dualAnimationsMachine.StartDoubleAnimation(attacker, receiver);
+				var currentHealth = stats.GetAttrValuePercent(healthAttribute.attribute.uniqueName);
+
+				if (currentHealth <= finisherPercentStarter * 0.01)
+				{
+					ApplyDamage(CurrentHealth);
+					await dualAnimationsMachine.StartDoubleAnimation(attacker, receiver);
+				}
 			}
 		}
 
@@ -152,6 +157,7 @@ namespace Plugins.Scripts
 				}
 
 				characterController.enabled = false;
+				melee.ReleaseTargetFocus();
 				melee.enabled = false;
 				character.characterLocomotion.Stop();
 

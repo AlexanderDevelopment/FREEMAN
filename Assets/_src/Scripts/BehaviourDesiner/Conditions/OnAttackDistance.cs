@@ -11,9 +11,9 @@ namespace _src.Scripts.BehaviourDesiner.Conditions
 
     namespace _src.Scripts.Ai.Tasks
     {
-        [TaskDescription("Can attack")]
+        [TaskDescription("On Attack Distance")]
         [TaskCategory("Attack")]
-        public class CanAttack : Conditional
+        public class OnAttackDistance : Conditional
         {
             public SharedFloat AttackDistance;
 

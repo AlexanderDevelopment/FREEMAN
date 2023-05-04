@@ -1320,10 +1320,11 @@ GameObject:
   - component: {fileID: 8798009101737994613}
   - component: {fileID: 8798009101737994618}
   - component: {fileID: 8798009101737994609}
-  - component: {fileID: 8798009101737994611}
   - component: {fileID: 8325054277699648528}
   - component: {fileID: 5397740597763521486}
   - component: {fileID: 728783661603502194}
+  - component: {fileID: 1283183243552562229}
+  - component: {fileID: 3027715904933050829}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -1569,46 +1570,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8798009101737994611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8798009101737994619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startWhenEnabled: 1
-  asynchronousLoad: 0
-  pauseWhenDisabled: 1
-  restartWhenComplete: 1
-  logTaskChanges: 0
-  group: 0
-  resetValuesOnRestart: 0
-  externalBehavior: {fileID: 11400000, guid: c862991602476c24db485c53fd179016, type: 2}
-  mBehaviorSource:
-    behaviorName: Behavior
-    behaviorDescription: 
-    mTaskData:
-      types: []
-      parentIndex: 
-      startIndex: 
-      variableStartIndex: 
-      JSONSerialization: '{"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"AttackDistance","IsShared":true,"SinglemValue":1.3}]}'
-      fieldSerializationData:
-        typeName: []
-        fieldNameHash: 
-        startIndex: 
-        dataPosition: 
-        unityObjects: []
-        byteData: 
-        byteDataArray: 
-      Version: 1.7.4
-  gizmoViewMode: 2
-  showBehaviorDesignerGizmo: 1
 --- !u!114 &8325054277699648528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1686,6 +1647,42 @@ MonoBehaviour:
   finishers:
   - {fileID: 11400000, guid: 64428139838453747b001785d3ed4adc, type: 2}
   - {fileID: 11400000, guid: 6f6a5f0873b2f7d4cb79f25585a0b8bd, type: 2}
+--- !u!114 &1283183243552562229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8798009101737994619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50696db37d04367bbd4e4d965fa687d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  _enemyAiData: {fileID: 11400000, guid: a98566e76e4cb5049a7588dc24a9e52d, type: 2}
+--- !u!114 &3027715904933050829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8798009101737994619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 202017c0d3d847e982e5445ef8bb578d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathColor: {r: 1, g: 0, b: 0, a: 1}
+  agent: {fileID: 8798009101737994609}
 --- !u!1 &8798009101767905430
 GameObject:
   m_ObjectHideFlags: 0

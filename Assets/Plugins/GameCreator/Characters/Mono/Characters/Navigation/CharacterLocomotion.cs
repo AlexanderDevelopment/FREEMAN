@@ -21,8 +21,7 @@
         public enum LOCOMOTION_SYSTEM
         {
             CharacterController,
-            NavigationMeshAgent,
-            AStarPathfinding
+            NavigationMeshAgent
         }
 
         public enum FACE_DIRECTION

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _src.Scripts.BehaviourDesiner.Conditions
 {
-    [TaskDescription("Is Death")]
+    [TaskDescription("Is not Death")]
     [TaskCategory("Stats")]
     public class IsDeath : Conditional
     {

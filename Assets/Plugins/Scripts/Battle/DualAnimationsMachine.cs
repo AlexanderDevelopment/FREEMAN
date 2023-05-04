@@ -54,12 +54,13 @@ namespace Plugins.Scripts
 			if (!isEnemy)
 				return;
 
+			isPlayingFinisher = true;
 			attackerAnimatorController = attacker.GetComponent<CharacterAnimator>();
 			receiverAnimatorController = receiver.GetComponent<CharacterAnimator>();
-			//Important rotate character before lock its, becouse we disable they's character controllers
-			RotateActorsEachOthers(attacker, receiver);
 			CharacterLock(attacker);
 			CharacterLock(receiver);
+			//Important rotate character after lock its, becoause we disable they's character controllers which block hard rotation
+			RotateActorsEachOthers(attacker, receiver);
 			var attackerVirtualCamera = attacker.GetComponent<DualAnimationsMachine>().virtualCamera;
 			attackerVirtualCamera.m_Priority = 2;
 			await PlayFinisher();

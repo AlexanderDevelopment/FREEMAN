@@ -1,6 +1,4 @@
-﻿using BehaviorDesigner.Runtime.Tactical;
-
-namespace GameCreator.Characters
+﻿namespace GameCreator.Characters
 {
     using UnityEngine;
     using GameCreator.Core;

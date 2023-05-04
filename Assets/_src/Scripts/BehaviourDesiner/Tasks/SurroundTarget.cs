@@ -1,6 +1,7 @@
 ﻿using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using GameCreator.Characters;
+using Plugins.Scripts;
 using UnityEngine;
 
 namespace _src.Scripts.Ai.Tasks
@@ -17,26 +18,26 @@ namespace _src.Scripts.Ai.Tasks
 
         private Character character;
         private bool isSurrounding;
+        private Vector3 randomPoint;
+        private BattleCircle battleCircle;
 
 
         public override void OnStart()
         {
             character = GetComponent<Character>();
+            battleCircle = Target.Value.GetComponent<BattleCircle>();
             isSurrounding = false;
-        }
-
-        public override TaskStatus OnUpdate()
-        {
-            var targetPos = Target.Value.transform.position;
-
-            Vector3 randomPoint = targetPos +
-                                  new Vector3(Random.value - 0.5f, 0, Random.value - 0.5f).normalized * radius.Value;
+            randomPoint = RandomPointAroundTarget();
             if (character && !isSurrounding)
             {
                 isSurrounding = true;
                 character.characterLocomotion.SetTarget(randomPoint, null, 0.03f);
+                battleCircle.AttackerRemove(character);
             }
+        }
 
+        public override TaskStatus OnUpdate()
+        {
             return CompletePath(new Vector2(randomPoint.x, randomPoint.z),
                 new Vector2(character.transform.position.x, character.transform.position.z))
                 ? TaskStatus.Success
@@ -46,6 +47,13 @@ namespace _src.Scripts.Ai.Tasks
         private bool CompletePath(Vector2 pointA, Vector2 pointB)
         {
             return Vector2.Distance(pointA, pointB) < 0.5f;
+        }
+
+
+        private Vector3 RandomPointAroundTarget()
+        {
+            var battleCircle = Target.Value.GetComponent<BattleCircle>();
+            return battleCircle.GetClosestCirclePosition(transform.position);
         }
     }
 }

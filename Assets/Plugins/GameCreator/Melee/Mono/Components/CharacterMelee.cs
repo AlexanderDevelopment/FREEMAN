@@ -229,13 +229,6 @@ namespace GameCreator.Melee
 						if (targetMelee != null)
 						{
 							hitResult = targetMelee.OnReceiveAttack(this, attack);
-							targetMelee.gameObject.TryGetComponent(out BehaviorTree tree);
-
-							if (tree is not null)
-							{
-								tree.DisableBehavior();
-								tree.EnableBehavior();
-							}
 						}
 
 						IgniterMeleeOnReceiveAttack[] triggers = (
