@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackDistance: 1
   AggroDistance: 10
-  MeleeInputInterval: 0.4
+  MeleeInputInterval: 0.6
   MeleeAttackCount: 3
   MeleeKey: 0

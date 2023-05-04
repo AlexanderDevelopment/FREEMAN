@@ -91,7 +91,7 @@ namespace Plugins.Scripts
 				{
 					ApplyDamage(damage);
 
-					if (!isDead && !dualAnimationsMachine.IsPlayingFinisher)
+					if (!isDead && !dualAnimationsMachine.isPlayingFinisher)
 						CheckHealthForStartFinisher(attacker, receiver);
 				}
 			);
@@ -163,7 +163,7 @@ namespace Plugins.Scripts
 
 
 
-				if (dualAnimationsMachine.IsPlayingFinisher)
+				if (dualAnimationsMachine.isPlayingFinisher)
 					return;
 
 

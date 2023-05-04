@@ -5,12 +5,10 @@ namespace Plugins.Scripts.Battle.BattleAI
 {
 	public class CloseUpWithPlayerState : State
 	{
-
-		private DualAnimationsMachine playerDualAnimationsMachine;
+		
 
 		public override void Enter()
 		{
-			playerDualAnimationsMachine = enemy.Player.GetComponent<DualAnimationsMachine>();
 		}
 
 
@@ -21,7 +19,7 @@ namespace Plugins.Scripts.Battle.BattleAI
 				stateMachine.ChangeState(enemyAiStates.DeathState);
 			}
 			
-			if (!enemy.PlayerBattleCircle.PlayerIsBusy && !playerDualAnimationsMachine.IsPlayingFinisher)
+			if (!enemy.PlayerBattleCircle.PlayerIsBusy)
 			{
 				enemy.PlayerBattleCircle.AttackerAdd(enemy.CurrentEnemy);
 				enemy.CurrentEnemy.characterLocomotion.SetTarget(enemy.Player.transform.position, null, 0);

@@ -1587,6 +1587,7 @@ MonoBehaviour:
   strength: {fileID: 890853626552569761, guid: 7ed1fdb1e1cadc54fb55ac2be885023d, type: 2}
   dualAnimationsMachine: {fileID: 728783661603502194}
   finisherPercentStarter: 41
+  finisherChance: 10
   clip: {fileID: 7400000, guid: f79d9ecc62f1aac42bc7e8f239bf4450, type: 3}
   avatarMask: {fileID: 31900000, guid: bb6795e9cabf6d14db69003cea43ebc0, type: 2}
   transitionTime: 0
@@ -1641,9 +1642,11 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  virtualCamera: {fileID: 3363291225853391054}
+  finisherCameras:
+  - {fileID: 3363291225853391054}
   isEnemy: 1
   characterFeedbacks: {fileID: 0}
+  isPlayingFinisher: 0
   finishers:
   - {fileID: 11400000, guid: 64428139838453747b001785d3ed4adc, type: 2}
   - {fileID: 11400000, guid: 6f6a5f0873b2f7d4cb79f25585a0b8bd, type: 2}

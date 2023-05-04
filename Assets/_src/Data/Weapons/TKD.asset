@@ -30,7 +30,7 @@ MonoBehaviour:
   audioSheathe: {fileID: 0}
   audioDraw: {fileID: 0}
   audioImpactNormal: {fileID: 8300000, guid: 21c1d578cb15c5d41a9ad7f4d4b335d2, type: 3}
-  audioImpactKnockback: {fileID: 8300000, guid: f03117ad67fa8e549aa426a166e78c51,
+  audioImpactKnockback: {fileID: 8300000, guid: 489ad4fd542d5d14192df6696424d1d9,
     type: 3}
   groundHitReactionsFront:
   - {fileID: 11400000, guid: 10e968b94c1a01547a8d1cdbc459a6db, type: 2}
@@ -69,5 +69,5 @@ MonoBehaviour:
     isEnabled: 1
   prefabImpactNormal: {fileID: 2427786012956944610, guid: da0de216ad60c5d46a6b049d61961615,
     type: 3}
-  prefabImpactKnockback: {fileID: 2427786012956944610, guid: da0de216ad60c5d46a6b049d61961615,
+  prefabImpactKnockback: {fileID: 649506837890780913, guid: ef7e07b3017ceac43a77c5103238cce8,
     type: 3}

@@ -29,8 +29,9 @@ MonoBehaviour:
   rotationOffset: {x: 0, y: 0, z: 0}
   audioSheathe: {fileID: 0}
   audioDraw: {fileID: 0}
-  audioImpactNormal: {fileID: 0}
-  audioImpactKnockback: {fileID: 0}
+  audioImpactNormal: {fileID: 8300000, guid: f03117ad67fa8e549aa426a166e78c51, type: 3}
+  audioImpactKnockback: {fileID: 8300000, guid: c81b56d9793e44a4299a7f20c2a48531,
+    type: 3}
   groundHitReactionsFront:
   - {fileID: 11400000, guid: 10e968b94c1a01547a8d1cdbc459a6db, type: 2}
   groundHitReactionsBehind:
@@ -62,5 +63,7 @@ MonoBehaviour:
     condition: 0
     meleeClip: {fileID: 11400000, guid: b876aa11a618b8c4fac67a1036da9a7a, type: 2}
     isEnabled: 1
-  prefabImpactNormal: {fileID: 0}
-  prefabImpactKnockback: {fileID: 0}
+  prefabImpactNormal: {fileID: 6168487065481255599, guid: 6941df3d4c582f741bb063afb34967c1,
+    type: 3}
+  prefabImpactKnockback: {fileID: 8557867537291236502, guid: 854c588999d9c5a488c878bd2dba42b9,
+    type: 3}

@@ -17,32 +17,30 @@ namespace Plugins.Scripts
 	public class DualAnimationsMachine : SerializedMonoBehaviour
 	{
 		[SerializeField, Required]
-		private CinemachineVirtualCamera virtualCamera;
+		private List<CinemachineVirtualCamera> finisherCameras;
 
 
 		[SerializeField]
 		private bool isEnemy;
-		
-		[SerializeField, Required, DisableIf ("isEnemy", Value = false)]
+
+
+		[SerializeField, Required, DisableIf("isEnemy", Value = false)]
 		private CharacterFeedbacks characterFeedbacks;
 
 
-		
 
-
-		public CinemachineVirtualCamera VirtualCamera
-			=> virtualCamera;
+		public List<CinemachineVirtualCamera> FinisherCameras
+			=> finisherCameras;
 
 
 		private CharacterAnimator attackerAnimatorController;
 
 		private CharacterAnimator receiverAnimatorController;
 
-		private bool isPlayingFinisher;
 
+		[ShowInInspector, ReadOnly]
+		public bool isPlayingFinisher;
 
-		public bool IsPlayingFinisher
-			=> isPlayingFinisher;
 
 
 		[SerializeField]
@@ -54,18 +52,23 @@ namespace Plugins.Scripts
 			if (!isEnemy)
 				return;
 
-			isPlayingFinisher = true;
+			var attackerDualAnimationsMachine = attacker.GetComponent<DualAnimationsMachine>();
 			attackerAnimatorController = attacker.GetComponent<CharacterAnimator>();
 			receiverAnimatorController = receiver.GetComponent<CharacterAnimator>();
+			attackerDualAnimationsMachine.isPlayingFinisher = isPlayingFinisher = true;
+
 			CharacterLock(attacker);
 			CharacterLock(receiver);
+
 			//Important rotate character after lock its, becoause we disable they's character controllers which block hard rotation
 			RotateActorsEachOthers(attacker, receiver);
-			var attackerVirtualCamera = attacker.GetComponent<DualAnimationsMachine>().virtualCamera;
+
+			var attackerVirtualCamera = attackerDualAnimationsMachine.finisherCameras[Random.Range(0, attackerDualAnimationsMachine.finisherCameras.Count)];
 			attackerVirtualCamera.m_Priority = 2;
 			await PlayFinisher();
 			attackerVirtualCamera.m_Priority = 0;
 			CharacterUnlock(attacker);
+			attackerDualAnimationsMachine.isPlayingFinisher = isPlayingFinisher = false;
 		}
 
 
@@ -101,7 +104,6 @@ namespace Plugins.Scripts
 			var dualAnimation = finishers[Random.Range(0, finishers.Count)];
 			var attackerCharacter = attackerAnimatorController.GetComponent<Character>();
 			var attackerFeedbacks = attackerAnimatorController.GetComponent<CharacterFeedbacks>();
-			isPlayingFinisher = true;
 
 			if (attackerAnimatorController && receiverAnimatorController)
 			{
@@ -117,7 +119,6 @@ namespace Plugins.Scripts
 					TimeSpan.FromSeconds((int)Math.Round(dualAnimation.ReceiverAnimation.length))
 				);
 
-				isPlayingFinisher = false;
 				StopListenFeedbacksOnAnimationEvent(attackerCharacter);
 			}
 		}
