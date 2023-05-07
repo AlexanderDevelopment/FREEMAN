@@ -47,6 +47,10 @@ namespace Plugins.Scripts
 		private AnimationClip clip;
 
 
+		[SerializeField, Required]
+		private MMF_Player deathFeedbacks;
+
+
 		[SerializeField]
 		private AvatarMask avatarMask;
 
@@ -151,6 +155,9 @@ namespace Plugins.Scripts
 		{
 			if (!isDead)
 			{
+				if (deathFeedbacks)
+					deathFeedbacks.PlayFeedbacks();
+				
 				isDead = true;
 				TryGetComponent(out character);
 				TryGetComponent(out characterAnimator);
