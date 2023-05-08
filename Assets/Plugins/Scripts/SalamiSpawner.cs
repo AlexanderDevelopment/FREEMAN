@@ -122,7 +122,7 @@ namespace Plugins.Scripts
 		{
 			for (int i = 0; i < poolSize; i++)
 			{
-				var newSalamiPart = Instantiate(salamiPart);
+				var newSalamiPart = Instantiate(salamiPart, gameObject.transform);
 				salamiPool.Add(newSalamiPart);
 				newSalamiPart.gameObject.SetActive(false);
 			}
