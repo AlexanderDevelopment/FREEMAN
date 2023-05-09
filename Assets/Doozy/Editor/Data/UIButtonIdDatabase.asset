@@ -19,6 +19,8 @@ MonoBehaviour:
     - Category: UI
       Name: Exit
     - Category: UI
+      Name: LoadGame
+    - Category: UI
       Name: Play
     - Category: UI
       Name: Return

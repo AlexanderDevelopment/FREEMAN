@@ -15,6 +15,8 @@ MonoBehaviour:
   Database:
     Items:
     - Category: MainMenu
+      Name: LoadingScreen
+    - Category: MainMenu
       Name: MainMenuButtonsGroup
     - Category: MainMenu
       Name: Play
