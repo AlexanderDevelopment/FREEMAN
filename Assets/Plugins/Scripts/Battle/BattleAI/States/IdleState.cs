@@ -25,6 +25,7 @@ namespace Plugins.Scripts.Battle.BattleAI
 			}
 			if (Vector3.Distance(enemy.transform.position, enemy.Player.transform.position) <= enemy.EnemyAiData.AggroDistance)
 			{
+				enemy.CurrentEnemy.GetCharacterAnimator().ResetState(0,0);
 				stateMachine.ChangeState(enemyAiStates.SawPlayerState);
 			}
 		}

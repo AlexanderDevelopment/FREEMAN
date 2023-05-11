@@ -1,5 +1,41 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8114882064595967442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27cf7643fd6248ed9a5cd8b3322d17d, type: 3}
+  m_Name: 1f6ofpwr
+  m_EditorClassIdentifier: 
+  uniqueID: 7881755e2e114ea992c610aaa8042668
+  statusEffect:
+    uniqueName: PowerUp
+    shortName: 
+    title:
+      content: 
+      postProcess: 0
+      translationID: 0
+    description:
+      content: 
+      postProcess: 0
+      translationID: 0
+    icon: {fileID: 0}
+    color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    type: 0
+    hasDuration: 1
+    duration: 25
+    maxStack: 1
+    actionsOnStart: {fileID: 831353116263492155, guid: b22a227fa23b41e49974489beaf830ae,
+      type: 3}
+    actionsWhileActive: {fileID: 8968059341794421330, guid: 46a59d42621e7284fa27b24234ed6e00,
+      type: 3}
+    actionsOnEnd: {fileID: 5492913848436060731, guid: f4a0b07a7033022459117f4aa354fbb5,
+      type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,4 +48,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213036c5fc0bd40cca8cef17b403ca70, type: 3}
   m_Name: StatusEffectAsset
   m_EditorClassIdentifier: 
-  statusEffects: []
+  statusEffects:
+  - {fileID: -8114882064595967442}
