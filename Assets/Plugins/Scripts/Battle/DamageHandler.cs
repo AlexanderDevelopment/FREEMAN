@@ -1,4 +1,4 @@
-﻿using BehaviorDesigner.Runtime;
+﻿
 using Cysharp.Threading.Tasks;
 using GameCreator.Characters;
 using GameCreator.Melee;
@@ -163,7 +163,6 @@ namespace Plugins.Scripts
 				TryGetComponent(out characterAnimator);
 				TryGetComponent(out characterController);
 				TryGetComponent(out CharacterMelee melee);
-				TryGetComponent(out BehaviorTree behaviorTree);
 
 				if (characterAnimator == null || clip == null || characterController == null || character == null ||
 				    melee == null)
@@ -172,12 +171,7 @@ namespace Plugins.Scripts
 
 					return;
 				}
-
-				if (behaviorTree)
-				{
-					behaviorTree.DisableBehavior();
-					behaviorTree.enabled = false;
-				}
+				
 
 				characterController.enabled = false;
 				melee.ReleaseTargetFocus();

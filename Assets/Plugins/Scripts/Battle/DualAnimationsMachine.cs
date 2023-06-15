@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using _src.Data.Finishers;
-using BehaviorDesigner.Runtime;
 using Cinemachine;
 using Cysharp.Threading.Tasks;
 using GameCreator.Characters;
@@ -77,16 +76,7 @@ namespace Plugins.Scripts
 			character.characterLocomotion.Stop();
 			character.gameObject.GetComponent<CharacterMelee>().enabled = false;
 			character.gameObject.GetComponent<CharacterController>().enabled = false;
-			character.gameObject.TryGetComponent(out BehaviorTree behaviourTree);
 			character.characterLocomotion.isControllable = false;
-
-			//if is enemy
-			if (behaviourTree)
-			{
-				behaviourTree.StopAllTaskCoroutines();
-				behaviourTree.DisableBehavior();
-				behaviourTree.enabled = false;
-			}
 		}
 
 

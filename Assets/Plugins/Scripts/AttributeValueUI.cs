@@ -1,5 +1,4 @@
 ﻿using System;
-using BehaviorDesigner.Runtime.Tasks.Unity.UnityParticleSystem;
 using GameCreator.Characters;
 using GameCreator.Core;
 using GameCreator.Stats;
