@@ -13,7 +13,7 @@
 	{
 		private const string PLAYER_PREFAB_PATH = "Assets/Plugins/GameCreator/Characters/Prefabs/Player.prefab";
 		private const string SECTION_INPUT = "Player Input";
-
+		private const string PROP_JOYSTIC = "joystick";
 		private const string PROP_INPUTT = "inputType";
 		private const string PROP_MOUSEB = "mouseButtonMove";
         private const string PROP_LAYERM = "mouseLayerMask";
@@ -28,6 +28,7 @@
 
         private Section sectionInput;
 		private SerializedProperty spInputType;
+		private SerializedProperty spJoystic;
 		private SerializedProperty spMouseButtonMove;
         private SerializedProperty spMouseLayerMask;
         private SerializedProperty spInvertAxis;
@@ -48,6 +49,7 @@
 			this.sectionInput = new Section(SECTION_INPUT, iconInput, this.Repaint);
 
 			this.spInputType = serializedObject.FindProperty(PROP_INPUTT);
+			this.spJoystic = serializedObject.FindProperty(PROP_JOYSTIC);
 			this.spMouseButtonMove = serializedObject.FindProperty(PROP_MOUSEB);
             this.spMouseLayerMask = serializedObject.FindProperty(PROP_LAYERM);
             this.spInvertAxis = serializedObject.FindProperty(PROP_INVERT);
@@ -84,10 +86,9 @@
 					EditorGUILayout.BeginVertical(CoreGUIStyles.GetBoxExpanded());
 
 					EditorGUILayout.PropertyField(this.spInputType);
-                    EditorGUI.indentLevel++;
-
+					EditorGUI.indentLevel++;
 					if (this.spInputType.intValue == (int)PlayerCharacter.INPUT_TYPE.PointAndClick ||
-                        this.spInputType.intValue == (int)PlayerCharacter.INPUT_TYPE.FollowPointer)
+					    this.spInputType.intValue == (int)PlayerCharacter.INPUT_TYPE.FollowPointer)
 					{
 						EditorGUILayout.PropertyField(this.spMouseButtonMove);
 					}
@@ -114,7 +115,7 @@
                     EditorGUILayout.PropertyField(this.spUseAcceleration);
                     EditorGUI.indentLevel++;
                     EditorGUI.BeginDisabledGroup(!this.spUseAcceleration.boolValue);
-
+                    EditorGUILayout.PropertyField(this.spJoystic);
                     EditorGUILayout.PropertyField(this.spAcceleration);
                     EditorGUILayout.PropertyField(this.spDeceleration);
 

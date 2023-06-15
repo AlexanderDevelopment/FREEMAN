@@ -27,14 +27,14 @@
 
         protected const string AXIS_H = "Horizontal";
         protected const string AXIS_V = "Vertical";
-
+        
         protected static readonly Vector3 PLANE = new Vector3(1, 0, 1);
 
         protected const string PLAYER_ID = "player";
         public static OnLoadSceneData ON_LOAD_SCENE_DATA;
 
         // PROPERTIES: ----------------------------------------------------------------------------
-
+        public Joystick joystick; 
         public INPUT_TYPE inputType = INPUT_TYPE.Directional;
         public MOUSE_BUTTON mouseButtonMove = MOUSE_BUTTON.LeftClick;
         public LayerMask mouseLayerMask = ~0;
@@ -136,11 +136,23 @@
             }
             else
             {
-                targetDirection = new Vector3(
-                    Input.GetAxisRaw(AXIS_H),
-                    0.0f,
-                    Input.GetAxisRaw(AXIS_V)
-                );
+                if (joystick)
+                {
+                    targetDirection = new Vector3(
+                        -joystick.Horizontal,
+                        0.0f,
+                        -joystick.Vertical
+                    );
+                }
+                else
+                {
+                    targetDirection = new Vector3(
+                                      Input.GetAxisRaw(AXIS_H),
+                                      0.0f,
+                                      Input.GetAxisRaw(AXIS_V)
+                                  );  
+                }
+              
             }
 
             this.ComputeMovement(targetDirection);
