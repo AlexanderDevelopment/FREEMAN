@@ -92,7 +92,7 @@ namespace Plugins.Scripts
 
 		public UnityEvent<float, Character, Character> OnReceiveDamage = new();
 
-
+		public UnityEvent OnPlayerDead = new();
 
 		private void Start()
 		{
@@ -194,6 +194,7 @@ namespace Plugins.Scripts
 					CharacterAnimation.Layer.Layer1
 				);
 			}
+			OnPlayerDead.Invoke();
 		}
 	}
 }

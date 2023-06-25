@@ -8229,7 +8229,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.638, y: 0.132}
   m_AnchorMax: {x: 0.84300005, y: 0.73300004}
-  m_AnchoredPosition: {x: 0.5, y: -0.4081726}
+  m_AnchoredPosition: {x: 0.5, y: -0.40820312}
   m_SizeDelta: {x: -1.8090973, y: 2.9223022}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &302061592
@@ -15013,7 +15013,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.02478934}
   m_AnchorMax: {x: 0.67934346, y: 0.84000003}
-  m_AnchoredPosition: {x: -1.222229, y: 0}
+  m_AnchoredPosition: {x: -1.222168, y: 0}
   m_SizeDelta: {x: -2.4445, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &718555138
@@ -19275,6 +19275,66 @@ Transform:
   m_Father: {fileID: 1080353592}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1034486471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1034486472}
+  - component: {fileID: 1034486473}
+  - component: {fileID: 1034486474}
+  m_Layer: 0
+  m_Name: AdManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1034486472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034486471}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -34.125153, y: 1.2148596, z: -42.33066}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1034486473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034486471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b3604e8c41432a8388ec252e45d032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Instance: {fileID: 1034486473}
+  IronSource:
+    AppKey: 1a912563d
+--- !u!114 &1034486474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034486471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6dc6bc8e4bb2834e80531c648886d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1060561212
 GameObject:
   m_ObjectHideFlags: 0
@@ -27253,7 +27313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.638, y: 0.132}
   m_AnchorMax: {x: 0.84300005, y: 0.73300004}
-  m_AnchoredPosition: {x: 0.5, y: -0.4081726}
+  m_AnchoredPosition: {x: 0.5, y: -0.40820312}
   m_SizeDelta: {x: -1.8090973, y: 2.9223022}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1527405323
@@ -31631,18 +31691,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795442633}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.0009135162, w: 0.9999996}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2016578569}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.105}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 116, y: -28}
-  m_SizeDelta: {x: 131.9445, y: 48}
+  m_AnchoredPosition: {x: 121.204, y: -27.91}
+  m_SizeDelta: {x: 206.8582, y: 48.198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1795442635
 MonoBehaviour:
@@ -31664,7 +31724,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continue
+  m_text: Continue[WIP]
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1bdbbd43a253d47f99f853e49dce8edc, type: 2}
   m_sharedMaterial: {fileID: -6360588970910393389, guid: 1bdbbd43a253d47f99f853e49dce8edc,
